@@ -14,8 +14,13 @@ class SignupPage extends Page {
     get btnSubmit () { return $('button=Sign up') }
 
     /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
+     * 
+     * @param username string value for username/email when signing up
+     * @param password string value used for password when signing up
+     * Function takes a username and password then go through the website clicking on
+     * then sign up button in the nav bar.
+     * clear values in modal before start to set values
+     * click submit button to complete account creation
      */
     async signup (username: string, password: string) {
         await this.signupNavButton.click()
@@ -26,10 +31,7 @@ class SignupPage extends Page {
         await this.inputPassword.setValue(password)
         await this.btnSubmit.click()
     }
-
-    /**
-     * overwrite specifc options to adapt it to page object
-     */
+    
     open () {
         return super.open('#');
     }
