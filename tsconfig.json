@@ -2,6 +2,8 @@
     "compilerOptions": {
       "outDir": "./.tsbuild/",
       "sourceMap": false,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
       "target": "es2019",
       "module": "commonjs",
       "removeComments": true,
