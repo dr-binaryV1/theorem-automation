@@ -1,0 +1,23 @@
+{
+  "name": "damian-theorem-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio run ./wdio.conf.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/cli": "^7.11.1"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^7.11.1",
+    "@wdio/mocha-framework": "^7.11.1",
+    "@wdio/spec-reporter": "^7.10.1",
+    "chromedriver": "^93.0.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2",
+    "wdio-chromedriver-service": "^7.2.0"
+  }
+}
