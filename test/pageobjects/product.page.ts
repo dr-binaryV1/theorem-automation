@@ -27,10 +27,7 @@ class ProductPage extends Page {
 
         await browser.pause(2000)
     }
-
-    /**
-     * overwrite specifc options to adapt it to page object
-     */
+    
     open () {
         return super.open('index.html');
     }
