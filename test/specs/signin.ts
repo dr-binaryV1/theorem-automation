@@ -22,7 +22,7 @@ describe('Login Component', () => {
         const alertText = await browser.getAlertText()
         expect(alertText).toEqual('Please fill out Username and Password.')
         await browser.acceptAlert()
-        await signinPage.closeBtn.click()
+        await signinPage.modalCloseButton.click()
     });
 
     it('should not sign in with invalid credentials', async () => {
@@ -31,7 +31,7 @@ describe('Login Component', () => {
         const alertText = await browser.getAlertText()
         expect(alertText).toEqual('User does not exist.')
         await browser.acceptAlert()
-        await signinPage.closeBtn.click()
+        await signinPage.modalCloseButton.click()
     });
 
     it('should sign in with valid credentials', async () => {
