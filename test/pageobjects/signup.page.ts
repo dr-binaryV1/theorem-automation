@@ -7,11 +7,11 @@ class SignupPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get signupNavButton () { return $('a#signin2') }
     get signupModalLabel () { return $('div.modal-header h5#signInModalLabel') }
     get inputUsername () { return $('input#sign-username') }
     get inputPassword () { return $('input#sign-password') }
     get btnSubmit () { return $('button=Sign up') }
+    get modalCloseButton () { return $('div.modal:nth-child(2) div.modal-footer button:nth-child(1)') }
 
     /**
      * 
