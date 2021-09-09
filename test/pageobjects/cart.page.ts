@@ -16,7 +16,15 @@ class CartPage extends Page {
     get thankYouTextLabel () { return $('div.showSweetAlert.visible h2') }
     get successModalText () { return $('div.showSweetAlert.visible p') }
     get successModalConfirmButton () { return $('div.sa-confirm-button-container button') }
+    get firstRowNameCol () { return $('tr.success td:nth-child(2)') }
+    get firstRowPriceCol () { return $('tr.success td:nth-child(3)') }
+    get firstRowDelButton () { return $('tr.success td:nth-child(4) a') }
+    get firstRow () { return $('tr.success') }
 
+    /**
+     * placeOrder function that clicks button to place order then proceed to input form information then purchase items.
+     * @param formData forData object used to fill out the information on the place order modal
+     */
     async placeOrder (formData: any) {
         await this.placeOrderButton.waitForClickable()
         await this.placeOrderButton.click()
