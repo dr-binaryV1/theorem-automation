@@ -26,6 +26,7 @@ describe('Contact component', () => {
         expect(isModalVisible).toBeFalsy()
     })
 
+    // Test fail as user is currently able to submit an empty form. This should not be the case
     it('Should not submit empty contact form', async () => {
         await ContactPage.sendMessage('', '', '')
         await browser.waitUntil(browser.isAlertOpen)
