@@ -1,6 +1,6 @@
 import ProductPage from  '../pageobjects/product.page';
 import CartPage from '../pageobjects/cart.page'
-import { productData, checkout } from '../testdata.json'
+import { productData, checkout, productCategories } from '../testdata.json'
 describe('Contact component', () => {
     before(async () => {
         await ProductPage.open()
@@ -9,15 +9,19 @@ describe('Contact component', () => {
     it('Should add items to shopping cart and checkout successfully', async () => {
         const testDataArr = [{
             ...productData.phone,
-            category: 'Phones'
+            category: productCategories.Phone
         }, {
             ...productData.laptop,
-            category: 'Laptops'
+            category: productCategories.Laptop
         }]
         let cartPrice = 0
 
+        // Loop through test Data Array calling addItemToCart on each item
+        // addItemToCart then carry out the process of adding that particular item to the shopping cart
         for (let i = 0; i < testDataArr.length; i ++) {
             await ProductPage.addItemToCart(testDataArr[i].category, testDataArr[i].name)
+
+            // Calculate the total price for items added to make assertions on the total price displayed in the shopping cart
             cartPrice += testDataArr[i].price
         }
 
@@ -42,9 +46,11 @@ describe('Contact component', () => {
     it('Should delete item from the cart successfully', async () => {
         const testDataArr = [{
             ...productData.phone,
-            category: 'Phones'
+            category: productCategories.Phone
         }]
 
+        // Loop through test Data Array calling addItemToCart on each item
+        // addItemToCart then carry out the process of adding that particular item to the shopping cart
         for (let i = 0; i < testDataArr.length; i ++) {
             await ProductPage.addItemToCart(testDataArr[i].category, testDataArr[i].name)
         }
@@ -73,9 +79,11 @@ describe('Contact component', () => {
     it('Should not submit purchase order if credit card and name information missing', async () => {
         const testDataArr = [{
             ...productData.phone,
-            category: 'Phones'
+            category: productCategories.Phone
         }]
 
+        // Loop through test Data Array calling addItemToCart on each item
+        // addItemToCart then carry out the process of adding that particular item to the shopping cart 
         for (let i = 0; i < testDataArr.length; i ++) {
             await ProductPage.addItemToCart(testDataArr[i].category, testDataArr[i].name)
         }
