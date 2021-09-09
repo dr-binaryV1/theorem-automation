@@ -4,9 +4,6 @@ import Page from './page';
  * sub page containing specific selectors and methods for a specific page
  */
 class SigninPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
     get signupModalLabel () { return $('h5=Log in') }
     get nameOfUserLabel () { return $('a#nameofuser') }
     get logOutNav () { return $('a=Log out') }
@@ -16,8 +13,9 @@ class SigninPage extends Page {
     get modalCloseButton () { return $('div.modal:nth-child(3) div.modal-footer button:nth-child(1)') }
 
     /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
+     * Function that clicks log in navigation then enter credentials in modal and clicking submit button afterwards
+     * @param username username to be used to sign in user
+     * @param password password to be used to sign in user
      */
     async signin (username: string, password: string) {
         await this.signinNavButton.waitForClickable()
