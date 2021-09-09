@@ -1,12 +1,12 @@
 import ProductPage from  '../pageobjects/product.page'
-import ProductJson from '../testdata.json'
+import { productData } from '../testdata.json'
 
 describe('Product component', () => {
     it('Should correctly search for items on the phone page', async () => {
         await ProductPage.open();
 
         await ProductPage.selectProductType('Phones')
-        const elemsFound = await $$(`a=${ProductJson.productData.PhoneName}`)
+        const elemsFound = await $$(`a=${productData.phone.name}`)
         expect(elemsFound.length).toBeGreaterThanOrEqual(1)
     });
 
@@ -14,7 +14,7 @@ describe('Product component', () => {
         await ProductPage.open();
 
         await ProductPage.selectProductType('Laptops')
-        const elemsFound = await $$(`a=${ProductJson.productData.LaptopName}`)
+        const elemsFound = await $$(`a=${productData.laptop.name}`)
         expect(elemsFound.length).toBeGreaterThanOrEqual(1)
     });
 
@@ -22,7 +22,7 @@ describe('Product component', () => {
         await ProductPage.open();
 
         await ProductPage.selectProductType('Monitors')
-        const elemsFound = await $$(`a=${ProductJson.productData.MonitorName}`)
+        const elemsFound = await $$(`a=${productData.monitor.name}`)
         expect(elemsFound.length).toBeGreaterThanOrEqual(1)
     });
 });
