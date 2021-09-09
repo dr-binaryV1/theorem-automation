@@ -1,5 +1,5 @@
 import ContactPage from  '../pageobjects/contact.page';
-import testData from '../testdata.json'
+import { contactData } from '../testdata.json'
 
 describe('Contact component', () => {
     before(async () => {
@@ -7,7 +7,7 @@ describe('Contact component', () => {
     })
 
     it('Should successfully submit a contact form', async () => {
-        await ContactPage.sendMessage(testData.contactData.email, testData.contactData.name, testData.contactData.message)
+        await ContactPage.sendMessage(contactData.email, contactData.name, contactData.message)
         await browser.waitUntil(browser.isAlertOpen)
         const alertText = await browser.getAlertText()
 
