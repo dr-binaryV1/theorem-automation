@@ -15,4 +15,4 @@
 ## What would i do different if i had more time
 1. Spend more time to make a few more meaning full assertions on elements on a particular page
 2. Create some more edge case testing or unhappy path automation
-3. 
+3. Write tests for UI expectations eg button sizes or colors (implementing a screenshot testing tool like backstopjJS would be sufficient)
