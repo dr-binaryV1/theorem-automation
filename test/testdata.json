@@ -25,5 +25,10 @@
         "card": "4242424242424242",
         "month": "July",
         "year": "2030"
+    },
+    "productCategories": {
+        "Phone": "Phones",
+        "Laptop": "Laptops",
+        "Monitor": "Monitors"
     }
 }
