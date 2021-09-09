@@ -11,6 +11,12 @@ class ContactPage extends Page {
     get sendMessageButton () { return $('button=Send message') }
     get modalCloseButton () { return $('div.modal:nth-child(1) div.modal-footer button:nth-child(1)') }
 
+    /**
+     * Function that clicks on contact navigation items then fills out information on modal afterwards clicking button to submit
+     * @param email user email information
+     * @param name user's name
+     * @param message message thta is being sent
+     */
     async sendMessage (email: string, name: string, message: string) {
         await this.contactNavButton.waitForClickable()
         await this.contactNavButton.click()
