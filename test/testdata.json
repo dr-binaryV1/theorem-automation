@@ -1,7 +1,29 @@
 {
     "productData": {
-        "PhoneName": "Sony xperia z5",
-        "LaptopName": "Sony vaio i5",
-        "MonitorName": "ASUS Full HD"
+        "phone": {
+            "name": "Sony xperia z5",
+            "price": 320
+        },
+        "laptop": {
+            "name": "Sony vaio i5",
+            "price": 790
+        },
+        "monitor": {
+            "name": "ASUS Full HD",
+            "price": 230
+        }
+    },
+    "contactData": {
+        "email": "test@test.com",
+        "name": "Test User",
+        "message": "This is a test"
+    },
+    "checkout": {
+        "name": "Test User",
+        "country": "Test Country",
+        "city": "Test City",
+        "card": "4242424242424242",
+        "month": "July",
+        "year": "2030"
     }
 }
