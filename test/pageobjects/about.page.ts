@@ -1,12 +1,5 @@
 import Page from './page';
-
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class ProductPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
     get playButton () { return $('button.vjs-big-play-button') }
     get aboutusTitle () { return $('h5=About us') }
     get player () { return $('div.video-js') }
@@ -14,25 +7,31 @@ class ProductPage extends Page {
     get smallPauseButton () { return $('button[title="Pause"]') }
     get modalCloseButton () { return $('div.modal:nth-child(4) div.modal-footer button:nth-child(1)') }
 
+    /**
+     * Function play the about us video by clicking the large play button span over the player
+     */
     async playAboutusVideo () {
         await this.aboutusTitle.waitForDisplayed()
         await this.playButton.waitForClickable()
         await this.playButton.click()
     }
 
+    /**
+     * Function that will pause the about us video by clicking the pause button on the player
+     */
     async pauseAboutusVideo () {
         await this.smallPauseButton.waitForClickable()
         await this.smallPauseButton.click()
     }
 
+    /**
+     * Function that will resume the about us video by clicking the play button on the player
+     */
     async resumeAboutusVideo () {
         await this.smallPlayButton.waitForClickable()
         await this.smallPlayButton.click()
     }
-
-    /**
-     * overwrite specifc options to adapt it to page object
-     */
+    
     open () {
         return super.open('#');
     }
