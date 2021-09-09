@@ -5,12 +5,15 @@ import signinPage from '../pageobjects/signin.page';
 
 describe('Login Component', () => {
     let username: string
-    let password = 'somesecretpassword'
+    const password = 'somesecretpassword'
 
     before(async () => {
         // storing username before tests run for reusability 
+        // using uuid to get random strings to use for username to prevent clash and premature failures
         username = uuid()
         signUpPage.open()
+
+        // Calling the sign up function to create a valid user to carry out tests
         await signUpPage.signup(username, password)
         await browser.waitUntil(browser.isAlertOpen)
         await browser.acceptAlert()
