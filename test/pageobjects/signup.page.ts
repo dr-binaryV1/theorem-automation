@@ -1,12 +1,5 @@
 import Page from './page';
-
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class SignupPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
     get signupModalLabel () { return $('div.modal-header h5#signInModalLabel') }
     get inputUsername () { return $('input#sign-username') }
     get inputPassword () { return $('input#sign-password') }
@@ -14,7 +7,6 @@ class SignupPage extends Page {
     get modalCloseButton () { return $('div.modal:nth-child(2) div.modal-footer button:nth-child(1)') }
 
     /**
-     * 
      * @param username string value for username/email when signing up
      * @param password string value used for password when signing up
      * Function takes a username and password then go through the website clicking on
