@@ -1,7 +1,8 @@
 import ProductPage from  '../pageobjects/product.page';
 import CartPage from '../pageobjects/cart.page'
 import { productData, checkout, productCategories } from '../testdata.json'
-describe('Contact component', () => {
+
+describe('Cart component', () => {
     before(async () => {
         await ProductPage.open()
     })

@@ -2,7 +2,7 @@ import SignupPage from  '../pageobjects/signup.page';
 import { v4 as uuid } from 'uuid'
 import signupPage from '../pageobjects/signup.page';
 
-describe('My Login application', () => {
+describe('Sign Up Component', () => {
     let username: string
 
     before(() => {
