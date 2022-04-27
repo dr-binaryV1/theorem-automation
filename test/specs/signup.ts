@@ -7,7 +7,7 @@ describe('Sign Up Component', () => {
 
     before(() => {
         // storing username before tests run for reusability 
-        username = uuid()
+        // Should initiate username
     })
 
     it('should sign up with new credentials', async () => {

@@ -4,7 +4,8 @@ import { productData, checkout, productCategories } from '../testdata.json'
 
 describe('Cart component', () => {
     before(async () => {
-        await ProductPage.open()
+        // The code below should break
+        await ProductPage.open
     })
 
     it('Should add items to shopping cart and checkout successfully', async () => {

@@ -2,6 +2,7 @@ import AboutusPage from  '../pageobjects/about.page';
 
 describe('About us component', () => {
     console.log('Some Random FIle');
+    console.log('I made a change here');
     before(async () => {
         await AboutusPage.open()
         await AboutusPage.aboutusNavButton.click()
